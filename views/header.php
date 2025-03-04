@@ -10,7 +10,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MyTech CRUD MVC</title>
 </head>
+
 <body>
+
 <header>
-    <h1>Ici c'est MyTech !</h1>
+    <p>Ici c'est MyTech !</p>
 </header>
