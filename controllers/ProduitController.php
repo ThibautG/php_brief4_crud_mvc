@@ -11,7 +11,6 @@ class ProduitController {
      * function details tous les produits
      * Afficher les détails des produits
      *
-     * @param
      * */
 
     public function details(){
@@ -47,6 +46,33 @@ class ProduitController {
         // Inclusion de la vue
         include __DIR__ . '/../views/productDetails.php';
     }
+
+    /**
+     * function add
+     * Ajouter un produit
+     * */
+    public function add(){
+        // chargement du produit
+        Produit::addProduct($_POST['nom'], $_POST['prix'], $_POST['stock']);
+
+        // retour à index
+        header("Location: index.php");
+    }
+
+    /**
+     * function remove
+     * retirer un produit
+     *
+     * @param int $id Id du produit
+     * */
+    public function remove($id){
+        // chargement du produit
+        Produit::removeProduct($id);
+
+        // Inclusion de la vue
+        header("Location: index.php");
+    }
+
 
     // réparation de la voiture
     public function repair($id){

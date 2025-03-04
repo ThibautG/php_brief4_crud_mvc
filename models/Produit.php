@@ -72,6 +72,35 @@ class Produit {
         echo "Produit : " . $this->nom . ", Prix : " . $this->prix . ", Stock : " . $this->stock ;
     }
 
+    /** Ajouter un produit dans la bdd
+     * @param string $nom l'identifiant
+     * @param float $prix l'identifiant
+     * @param int $stock l'identifiant
+     * @return boolean true si suppression OK sinon false
+     * */
+    public static function addProduct($nom, $prix, $stock): bool{
+        // on récupère PDO via la Class Database
+        $db = Database::getInstance()->getConnection();
+
+        $stmt = $db->prepare("INSERT INTO produits (nom_produit, prix_produit, stock_produit) VALUES (?,?,?)");
+        return $stmt->execute([$nom, $prix, $stock]);
+
+    }
+
+    /** Supprimer un produit dans la bdd
+     * @param int $id l'identifiant
+     * @return boolean true si suppression OK sinon false
+     * */
+    public static function removeProduct($id): bool{
+        // on récupère PDO via la Class Database
+        $db = Database::getInstance()->getConnection();
+
+        $stmt = $db->prepare("DELETE FROM produits WHERE id_produit = ?");
+        return $stmt->execute([$id]);
+
+    }
+
+
     // Méthode pour sauvegarder le produit (l'instance) en BDD
     // Si l'id est null alors on fait une nouvelle insertion
     // Sinon on met à jour l'enregistrement
@@ -91,7 +120,7 @@ class Produit {
         } else {
             // Mise à jour si la voiture existe déjà
             $stmt = $db->prepare("UPDATE produits SET nom_produit=?, prix_produit=?, stock_produit=? WHERE id_produit=?");
-            $stmt->execute([$this->marque, $this->modele, $this->annee, $this->etat, $this->id]);
+            $stmt->execute([$this->nom, $this->prix, $this->stock, $this->id]);
         }
     }
 

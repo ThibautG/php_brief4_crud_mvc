@@ -40,7 +40,7 @@ if (!isset($produits)) {
     </table>
 
     <div>
-        <button><a href="add.php">Ajouter un article</a></button>
+        <button><a href="../views/addProduct.php">Ajouter un article</a></button>
     </div>
 <?php
 include 'footer.php'

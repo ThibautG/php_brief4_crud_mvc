@@ -40,9 +40,9 @@ switch ($action) {
         // Appel de la méthode pour afficher les détails des produits
         $controller->details();
         break;
-    case 'repair' :
-        // Appel de la méthode pour réparer la voiture
-        $controller->repair($id);
+    case 'add' :
+        // Appel de la méthode pour ajouter un produit
+        $controller->add();
         break;
     case 'failure' :
         // Appel de la méthode pour constater panne de la voiture
