@@ -44,9 +44,9 @@ switch ($action) {
         // Appel de la méthode pour ajouter un produit
         $controller->add();
         break;
-    case 'failure' :
+    case 'remove' :
         // Appel de la méthode pour constater panne de la voiture
-        $controller->failure($id);
+        $controller->remove($id);
         break;
     default:
         // Si l'action n'existe pas
