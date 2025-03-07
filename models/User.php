@@ -77,7 +77,7 @@ class User{
      * @param string $mdp le mdp
      * @return boolean true si suppression OK sinon false
      * */
-    public static function register($nom, $prenom, $email, $mdp): bool{
+    public static function registerUser($nom, $prenom, $email, $mdp): bool{
         // on récupère PDO via la Class Database
         $db = Database::getInstance()->getConnection();
 

@@ -15,6 +15,7 @@ session_start();
 
 // Inclusion des contrôleurs (ici il n'y a que produit)
 require_once 'controllers/ProduitController.php';
+require_once 'controllers/UserController.php';
 
 // Récupération des paramètres de l'action via l'URL (par exemple : index.php?action=details)
 $action = isset($_GET['action']) ? $_GET['action'] : 'details';
@@ -24,6 +25,7 @@ $id = isset($_GET['id']) ? intval($_GET['id']) : 0; // si on a rien on charge l'
 
 // instanciation du contrôleur
 $controller = new ProduitController();
+$user = new UserController();
 
 
 // Routage (selon la valeur de l'action)
@@ -41,16 +43,16 @@ switch ($action) {
         $controller->details();
         break;
     case 'add' :
-        // Appel de la méthode pour ajouter un produit
         $controller->add();
         break;
     case 'remove' :
-        // Appel de la méthode pour constater panne de la voiture
         $controller->remove($id);
         break;
     case 'edit' :
-        // Appel de la méthode pour constater panne de la voiture
         $controller->edit($id);
+        break;
+    case 'register' :
+        $user->register();
         break;
     default:
         // Si l'action n'existe pas

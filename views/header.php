@@ -38,6 +38,12 @@
                 <span>Ajouter un produit</span>
             </a>
         </li>
+        <li>
+            <a href="../../brief4_crud_mvc/views/register.php" class="menu-item">
+                <i class="fas fa-plus-circle"></i>
+                <span>Inscription</span>
+            </a>
+        </li>
         <!--<li>
             <a href="#" class="menu-item">
                 <i class="fas fa-chart-line"></i>
@@ -68,9 +74,9 @@
             <p>Gestion des produits</p>
         </div>
         <div class="user-section">
-            <span class="user-greeting">Bonjour, Admin!</span>
+            <span class="user-greeting">Connexion<!--Bonjour, Admin!--></span>
             <span class="user-avatar">
-                    <i class="fas fa-user-circle"></i>
+                    <a href="../../brief4_crud_mvc/views/login.php"><i class="fas fa-user-circle"></i></a>
                 </span>
         </div>
     </header>
