@@ -32,9 +32,9 @@ if (!isset($produits)) {
                 <td><?=  htmlspecialchars($p['nom_produit'])  ?></td>
                 <td><?=  htmlspecialchars($p['prix_produit'] . ' €')  ?></td>
                 <td><?=  htmlspecialchars($p['stock_produit'])  ?></td>
-                <td><button><a href="../views/editProduct.php?id=<?= $p['id_produit']; ?>">Modifier</a></button></td>
+                <td><button><a href="../../brief4_crud_mvc/views/editProduct.php?id=<?= $p['id_produit']; ?>">Modifier</a></button></td>
                 <td><button><a
-                                href="index.php?action=remove&id=<?= $p['id_produit']; ?>"
+                                href="../../brief4_crud_mvc/index.php?action=remove&id=<?= $p['id_produit']; ?>"
                                 onclick="return confirm('Voulez-vous vraiment supprimer ce produit ?');"
                         >Supprimer</a></button></td>
             </tr>
@@ -43,7 +43,7 @@ if (!isset($produits)) {
     </table>
 
     <div>
-        <button><a href="../views/addProduct.php">Ajouter un article</a></button>
+        <button><a href="../../brief4_crud_mvc/views/addProduct.php">Ajouter un article</a></button>
     </div>
 <?php
 include 'footer.php'
