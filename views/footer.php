@@ -1,21 +1,34 @@
-<?php
-?>
+<!-- footer.php -->
 </main>
-<footer>
+
+<footer class="dashboard-footer">
     <div class="footer-story">
-        <h3>Notre petite histoire</h3>
-        <p>PartyShop est né un vendredi soir de 2023, quand Alex et Sam, deux amis passionnés de fêtes et d'arc-en-ciel, se sont retrouvés à court de confettis pour une soirée improvisée. "Plus jamais ça !" se sont-ils promis en créant cette boutique où le fun ne s'arrête jamais.</p>
-        <p>Aujourd'hui, notre équipe de lutins festifs travaille jour et nuit (mais surtout la nuit) pour vous proposer les meilleurs produits qui mettront des paillettes dans votre vie ! 🌈✨</p>
+        <p>PartyShop est né un vendredi soir de 2023, quand Alex et Sam, deux amis passionnés de fêtes, se sont promis de créer une boutique où le fun ne s'arrête jamais 🌈✨</p>
     </div>
     <div class="footer-credits">
-        <p>© <?php echo date('Y'); ?> PartyShop - Tous droits réservés - Fait avec 💖 et beaucoup de paillettes</p>
+        <p>© <?php echo date('Y'); ?> PartyShop - Dashboard Admin</p>
         <p class="secret-message">P.S. : Un administrateur qui travaille tard mérite au moins deux cafés ☕☕</p>
     </div>
 </footer>
+</div>
 
 <script>
-    // Un petit script pour animer les éléments
+    // Marquer la page active dans le menu
     document.addEventListener('DOMContentLoaded', function() {
+        // Récupérer le chemin de la page actuelle
+        const currentPath = window.location.pathname;
+
+        // Trouver tous les liens du menu
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        // Pour chaque lien, vérifier s'il correspond au chemin actuel
+        menuItems.forEach(item => {
+            const href = item.getAttribute('href');
+            if (currentPath.includes(href) && href !== '#') {
+                item.classList.add('active');
+            }
+        });
+
         // Animation logo
         const logoSparkles = document.querySelectorAll('.logo-sparkle');
         setInterval(() => {
@@ -30,3 +43,4 @@
 </script>
 </body>
 </html>
+<!-- Fin du footer.php -->
