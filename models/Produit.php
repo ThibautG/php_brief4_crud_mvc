@@ -100,6 +100,21 @@ class Produit {
 
     }
 
+    /** modifier un produit dans la bdd
+     * @param string $nom l'identifiant
+     * @param float $prix l'identifiant
+     * @param int $stock l'identifiant
+     * @param int $id l'identifiant
+     * @return boolean true si suppression OK sinon false
+     * */
+    public static function editProduct(string $nom, float $prix, int $stock, int $id): bool{
+        // on récupère PDO via la Class Database
+        $db = Database::getInstance()->getConnection();
+
+        $stmt = $db->prepare("UPDATE produits SET nom_produit = ?, prix_produit = ?, stock_produit = ? WHERE id_produit = ?");
+        return $stmt->execute([$nom, $prix, $stock, $id]);
+
+    }
 
     // Méthode pour sauvegarder le produit (l'instance) en BDD
     // Si l'id est null alors on fait une nouvelle insertion

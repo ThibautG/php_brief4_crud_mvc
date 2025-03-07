@@ -20,7 +20,7 @@ require_once 'controllers/ProduitController.php';
 $action = isset($_GET['action']) ? $_GET['action'] : 'details';
 
 // Même chose avec l'id
-$id = isset($_GET['id']) ? intval($_GET['id']) : 2; // si on a rien on charge l'id 1 par défaut
+$id = isset($_GET['id']) ? intval($_GET['id']) : 0; // si on a rien on charge l'id 1 par défaut
 
 // instanciation du contrôleur
 $controller = new ProduitController();
@@ -47,6 +47,10 @@ switch ($action) {
     case 'remove' :
         // Appel de la méthode pour constater panne de la voiture
         $controller->remove($id);
+        break;
+    case 'edit' :
+        // Appel de la méthode pour constater panne de la voiture
+        $controller->edit($id);
         break;
     default:
         // Si l'action n'existe pas

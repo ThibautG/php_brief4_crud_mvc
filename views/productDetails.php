@@ -32,7 +32,7 @@ if (!isset($produits)) {
                 <td><?=  htmlspecialchars($p['nom_produit'])  ?></td>
                 <td><?=  htmlspecialchars($p['prix_produit'] . ' €')  ?></td>
                 <td><?=  htmlspecialchars($p['stock_produit'])  ?></td>
-                <td><button><a href="edit.php?id=<?= $p['id_produit']; ?>">Modifier</a></button></td>
+                <td><button><a href="../views/editProduct.php?id=<?= $p['id_produit']; ?>">Modifier</a></button></td>
                 <td><button><a
                                 href="index.php?action=remove&id=<?= $p['id_produit']; ?>"
                                 onclick="return confirm('Voulez-vous vraiment supprimer ce produit ?');"
