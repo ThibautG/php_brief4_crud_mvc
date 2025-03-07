@@ -42,9 +42,9 @@ if (!isset($produits)) {
         </tbody>
     </table>
 
-    <div>
+    <!--<div>
         <button><a href="../../brief4_crud_mvc/views/addProduct.php">Ajouter un article</a></button>
-    </div>
+    </div>-->
 <?php
 include 'footer.php'
 ?>
